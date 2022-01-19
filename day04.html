@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 1.复合选择器
+        ①后代选择器写法：父选择器 后代选择器{}
+        ②子代选择器写法：父选择器>子选择器{} */
+        div p{
+            color: purple;
+            font-size: 30px;
+        }
+        /* div>p{
+            color: orchid;
+            font-weight: 700;
+            background-color: thistle;
+        } */
+
+        /* 2.并集选择器 */
+        /* div,p,span,h6{
+            color: steelblue;
+            font-family: 宋体;
+            font-size: 30px;
+        } */
+
+        .box{
+            font-size: 25px;
+            font-family: 宋体;
+            color: tomato;
+            font-weight: 700;
+        }
+        /* 3.交集选择器 */
+        p.box{
+            background-color:palegreen;
+        }
+
+        /* 4.hover选择器 */
+        a:hover{
+        /* 复合选择器、交集选择器、并集选择器联合使用： div>p:hover,p.box:hover,a:hover{ } */
+            color: thistle;
+            font-size: 30px;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        #one{
+            color:seagreen;
+        }
+
+        /* 5.设置背景颜色的三种表示方法.注：0.5透明度的黄色和paleturquoise色叠加显示出第二个方块的颜色 */
+        div div{
+            width: 300px;
+            height: 300px;
+            background-color: paleturquoise;
+        }
+        div div div{
+            width: 200px;
+            height: 200px;
+            background-color: rgb(255, 255, 0, 0.5);
+        }
+        div div div div{
+            width: 100px;
+            height: 100px;
+            background-color: #98fb98;
+        }
+
+        /* 6.背景图片及其重复属性、位置,我选的图片尺寸为200*200 */
+        .img{
+            width: 400px;
+            height: 400px;
+            /* background-color: sandybrown;
+            background-image: url(./images/dog.jpeg); */
+            /* 6.1.1图片不平铺 */
+            /* background-repeat: no-repeat; */
+            /* 6.1.2图片水平垂直平铺 */
+            /* background-repeat: repeat; */
+            /* 6.1.3图片沿x轴方向即水平方向平铺 */
+            /* background-repeat: repeat-x; */
+            /* 6.1.4图片沿y轴方向即垂直方向平铺 */
+            /* background-repeat: repeat-y; */
+            /* 6.2使图片位于盒子的水平、垂直中心/左边中心/右边中心/顶部中心/底部中心 */
+            /* background-position: center; */
+            /* background-position: left; */
+            /* background-position: right; */
+            /* background-position: top; */
+            /* background-position: bottom; */
+            /* 6.3.1默认图片位于盒子的原点 即左上角*/
+            /* background-position: 0 0; */
+            /* 正数：图片相对于初始的原点位置 向右/下移动；负数：图片相对于初始的原点位置 向左/上移动 */
+            /* 6.3.2图片相对于初始的原点位置 向下移动 */
+            /* background-position: 0px 100px; */
+            /* 6.3.3图片相对于初始的原点位置 向右移动 */
+            /* background-position: 100px 0px; */
+            /* 6.3.4图片相对于初始的原点位置 向上移动 */
+            /* background-position: 0px -100px; */
+            /* 6.3.5图片相对于初始的原点位置 向左移动 */
+            /* background-position: -100px 0px; */
+            /* 复合表示法background：背景色 背景图 背景图的平铺方式 背景图位置；而且这四项无固定顺序 */
+            background: skyblue no-repeat center url(./images/dog.jpeg);
+        }
+
+        /* 7.1行内块元素：一行可以显示多个；可以设置宽高 img特例 */
+        img{
+            width: 200px;
+            height: 200px;
+        }
+
+        /* 7.2元素显示模式 */
+        #div{
+            width: 200px;
+            height: 200px;
+            background-color: thistle;
+            /* 将块级元素转为行内块元素 */
+            /* display: inline-block; */
+            /* 将块级元素转为行内元素(一行可以显示多个；宽度和高度由内容默认撑开；不可以设置宽高) */
+            display: inline;
+        }
+        span{
+            width: 200px;
+            height: 200px;
+            background-color: mistyrose;
+            /* 将行内元素转为块级元素 */
+            /* display: block; */
+            /* 将行内元素转为行内块元素 */
+            display: inline-block;
+        }
+        
+    </style>
+</head>
+<body>
+    <hr><p>这是一个p标签</p>
+    
+    <hr>
+    <div>
+        <p>这是div的子标签</p>
+    </div>
+
+    <hr>
+    <div>div标签</div>
+    <p>p标签</p>
+    <span>span标签</span>
+    <h6>h6标签</h6>
+
+    <hr>
+    <p class="box">交集选择器</p>
+    
+    <hr>
+    <a href="https://xiumi.us/#/">秀米官网</a>
+
+    <hr>
+    <!-- emment语法：快速生成代码 -->
+    <div>输入div回车，生成此格式代码</div>
+    
+    <div class="box">输入.div回车 生成此格式代码，即div标签中带bo类特征</div>
+    
+    <div id="one">输入#one回车 自动生成此格式代码，即div标签中带one类特征</div>
+    
+    <p class="box" id="one">输入p.box#one回车 自动生成p标签中带box和one类特征</p>
+    
+    <ul>
+        <li>输入ul>li回车 生成此格式代码</li>
+    </ul>
+   
+    <ul>
+        <li>输入ul>li+大括号回车 生成此格式代码</li>
+    </ul>
+   
+    <ul>
+        <li>输入ul>li*3回车 生成此格式代码</li>
+        <li></li>
+        <li></li>
+    </ul>
+    <!-- 输入ul>li{1}*3 生成如下内容： -->
+    <ul>
+        <li>1</li>
+        <li>1</li>
+        <li>1</li>
+    </ul>
+    <!-- 输入ul>li{$}*3 生成如下内容： -->
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+
+    <hr><div>
+        <div>
+            <div>
+                <div>1</div>2
+            </div>3
+        </div>
+    </div>
+
+    <hr><div class="img"></div>
+
+    <hr><img src="./images/rabbit.jpg" alt="">
+    <img src="./images/rabbit.jpg" alt="">
+
+    <hr>
+    <div id="div">div块级元素1</div>
+    <div id="div">div块级元素2</div>
+    <br><br>
+    <span>span行内元素1</span>
+    <span>span行内元素2</span>
+</body>
+</html>

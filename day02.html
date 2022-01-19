@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>day02——基础知识（二）</title>
+</head>
+<body>
+    <h3>1.1无序列表</h3>
+    <ul>
+        <li>榴莲</li>
+        <li>香蕉</li>
+        <li>苹果</li>
+    </ul>
+    
+    <hr><h3>1.2有序列表</h3>
+    <ol>
+        <li>张三：100</li>
+        <li>李四：90</li>
+        <li>王五：80</li>
+        <li>赵六：70</li>
+    </ol>
+    <hr><h3>1.3自定义列表</h3>
+    <dl>
+        <dt>帮助中心</dt>
+        <dd>账户管理</dd>
+        <dd>购物指南</dd>
+    </dl>
+
+    <hr><h3>2.表格</h3>
+    <table border="1" width="300" height="100"><!-- 表格的整体 -->
+        <caption><b>学生成绩单</b></caption><!--表格标题，位于上方居中-->
+        
+        <!--表格头部-->
+        <thead>
+            <tr>    <!--表格的行，可用于包裹td-->
+                <th>姓名</th> <!--列标头 -->
+                <th>成绩</th>
+                <th>评语</th>
+            </tr>
+        </thead>
+        
+        <!--表格主体-->
+        <tbody>
+            <tr>
+                <td>张三</td>   
+                <td>100</td>
+                <td>VERY GOOD！</td>
+            </tr>
+            <tr>
+                <td>李四</td> 
+                <td>99</td>
+                <td>GOOD！</td>
+            </tr>
+        </tbody>
+        
+        <!-- 上下合并→只保留最上的，删除其他 -->
+        <!-- <tbody>
+            <tr>
+                <td>张三</td>
+                <td rowspan="2">100</td>
+                <td>VERY GOOD！</td>
+            </tr>
+            <tr>
+                <td>李四</td>
+
+                <td>GOOD！</td>
+            </tr>
+        </tbody> -->
+        
+        <!--表格底部-->
+        <tfoot>
+            <tr>
+                <td>总结</td>
+                <td>A</td>
+                <td>GOOD</td>
+            </tr>
+        </tfoot>
+        
+        <!-- 左右合并→只保留最左的，删除其他 -->
+        <!-- <tfoot>
+            <tr>
+                <td>总结</td>
+                <td colspan="2">A</td>
+
+            </tr>
+        </tfoot> -->
+    </table>
+
+    <hr><h3>3.表单</h3>
+    文本框：<input type="text" placeholder="请输入账号">
+    <br>
+    密码框：<input type="password" placeholder="请输入密码">
+    <br>
+    单选框：<input type="radio">
+    <br>
+    多选框：<input type="checkbox">
+    <br>
+    文件选择：<input type="file">
+    <br>
+    提交按钮：<input type="submit">
+    <br>
+    重置按钮：<input type="reset">
+    <br>
+    普通按钮：<input type="button">
+    
+    <br><h4>（1）单选框示例</h4>
+    性别：<input type="radio" name="gender">男
+          <input type="radio" name="gender" checked>女
+    <br><h4>（2）多选框示例</h4>
+    ①<input type="checkbox">
+    ②<input type="checkbox">
+    ③<input type="checkbox">
+    ④<input type="checkbox">
+    ⑤<input type="checkbox">
+    
+    <br><h4>（3）文件选择</h4>
+    上传文件(可多选)<input type="file" multiple>
+
+    <br><h4>（4）按钮</h4>
+    <form>
+        用户名：<input type="text"><br>
+        密码：<input type="password"><br>
+        <input type="submit" value="免费注册">
+        <input type="reset">
+        <input type="button" value="普通按钮">
+    </form>
+    <br>
+    <form>
+        用户名：<input type="text"><br>
+        密码：<input type="password"><br>
+        <button>我是按钮</button> <!--谷歌中默认为提交按钮-->
+        <button type="submit">提交按钮</button>
+        <button type="reset">重置按钮</button>
+        <button type="button">普通按钮, 没有任何功能</button>
+    </form>
+    
+    <br><h4>（5）下拉菜单</h4>
+    <!-- select为下拉菜单的整体 option为每一项内容 -->
+    <select>
+        <option>北京</option>
+        <option>上海</option>
+        <option>广州</option>
+        <option selected>深圳</option>
+    </select>
+
+    <br><h4>（6）文本域</h4>
+    <textarea cols="30" rows="10"></textarea>
+
+    <br><h4>（7）label</h4>
+    性别:
+    <!-- 第一种方法：
+        1.使用label标签把内容（例如文本）包裹起来；
+        2.在表单签上添加id属性；
+        3.在label标签的for属性中设置对应的id属性值 -->
+    <input type="radio" name="gender" id="nan">
+    <label for="nan">男</label>
+    <!-- 第二种方法：直接使用label标签把内容和表单标签一起包裹起来 -->
+    <label><input type="radio" name="gender"> 女</label>
+
+    <hr><h3>4.没有语义的标签</h3>
+    普通文字
+    <div>这是div标签</div>
+    <div>这是div标签</div>
+    <span>这是span标签</span>
+    <span>这是span标签</span>
+
+    <hr><h3>5.有语义的标签</h3>
+    <header>网页头部</header>
+    <nav>网页导航</nav>
+    <footer>网页底部</footer>
+    <aside>侧边栏</aside>
+    <section>网页区块</section>
+    <article>文章</article>
+    
+    <hr><h3>6.字符实体</h3>
+    <!-- 网页不认识多个空格, 只认识一个 -->
+    这是HTML文档, 现在要学&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;习字符实体.
+
+</body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>day03CSS</title>
+    
+    <style>
+        /* CSS的注释 */
+        /* 选择器{CSS属性} */
+        /* 选择器：查找标签，即使<body>中相应的标签下内容有某些属性 */
+        
+        /* 1.1内嵌式：CSS写在style标签中，多在小案例中使用 */
+        p{
+            color:coral ;/*文字颜色*/
+            font-size: 30px;/*文字大小*/
+            background-color:cornsilk;/*文字背景颜色*/
+            width: 200px;/*文本框宽度*/
+            height: 60px;/*文本框高度*/
+        }     
+        
+        /* 2.类选择器 */
+        .one{
+            color:darkorchid;
+            font-size: 20px;
+        }
+        .two{
+            color:darksalmon;
+            width:250px;
+            height: 40px;
+        }
+        .three{
+            background-color: lightsalmon;
+        }
+
+        /* 3.id选择器 */
+        #four{
+            color:lightskyblue;
+        }
+
+        /* 4.通配符选择器 */
+        *{
+            color: sandybrown;
+        }
+
+        /* 6.文字加粗、倾斜 */
+        div{
+            font-weight: 900;
+            font-style: italic;
+        }
+
+        /* 7.常见字体：无衬线字体（sans-serif）、衬线字体（serif）、等宽字体（monospace） */
+        .font-family{
+            font-family:'Times New Roman', Times, serif
+        }
+        
+        /* 8.font符合属性 font:style weight size family; 只能省略前两个 */
+        .font{
+            font: italic 700 20px 宋体;
+            /* font-style: normal; */
+            /* font: 60px 宋体; */
+        }
+        
+        /* 9.文本缩进1em=当前标签的font-size大小=缩进16*2=32px */
+        #style{
+            text-indent: 2em;
+            font-size: 20px;
+        }
+        
+        /* 10.文本对齐方式：cneter、left、right */
+        #align{
+            text-align: center;
+        }
+        
+        /* 11.文本修饰线：上划线、下划线、删除线、无修饰线 */
+        .up{
+            text-decoration: overline;
+        }
+        .down{
+            text-decoration: underline;
+        }
+        .del{
+            text-decoration: line-through;
+        }
+        .none{
+            text-decoration: none;
+        }
+
+        /* 12.行高line-height */
+        .height{
+            line-height: 60px;
+            /* 60px等于前文设置的p类选择器中文本框的高度，所以文字在p标签内显示为上下居中*/
+            /* line-height: 2; 其中，2为当前标签font-size的2倍*/
+        }
+
+        #mar{
+            height: 100px;
+            width: 100px;
+            background-color: peachpuff;
+            font-style: normal;
+            font-family: 宋体;
+            text-align: center;
+            line-height: 100px;
+            margin: auto;
+        }
+    </style>
+    
+    <!-- 1.2外联式：CSS写在单独的css文件中，通过link标签引入；多在项目中使用 -->
+    <!-- <link rel="stylesheet" href="./p.css"> -->
+
+    <!-- 1.3行内式：CSS写在style属性中，常配合js使用 -->
+
+</head>
+<body>
+    <p>这是p标签</p>
+    
+    <hr>
+    <!-- 类选择器例子 -->
+    <p class="one three">又是一个p标签</p><!--一个标签可以使用多个类名，用空格隔开-->
+    <hr>
+    <p class="two">又又是一个p标签</p>
+    
+    <hr>
+    <!-- id选择器例子 -->
+    <span id="four">这是div标签</span>
+    
+    <hr>
+    <div>文字加粗、斜体</div>
+    
+    <hr>
+    <span class="font-family">Times New Roman字体</span>
+    
+    <hr>
+    <span class="font">font的复合属性显示</span>
+    
+    <hr>
+    <div id="style">文本样式:缩进两个字符缩进两个字符缩进两个字符缩进两个字符缩进两个字符缩进两个字符缩进两个字符缩进两个字符</div>
+    
+    <hr>
+    <h1 id="align">新闻标题——居中对齐</h1>
+    <img src="./tiger.jpg" alt="tiger.jpg" width="600px"> <!--使图片居中，可以在<body>中加属性-->
+    
+    <hr>
+    <span class="down">下划线</span>&nbsp;&nbsp;&nbsp;
+    <span class="up">上划线</span>&nbsp;&nbsp;&nbsp;
+    <span class="del">删除线</span>&nbsp;&nbsp;&nbsp;
+    <span class="none">无装饰线</span>
+    
+    <hr><p class="height">行高属性</p>
+
+    <hr><div id="mar">盒子</div>
+
+</body>
+</html>

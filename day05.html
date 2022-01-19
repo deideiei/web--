@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* #box{
+            color: palegreen;
+        }
+        .box{
+            color: orchid;
+        }
+        body{
+            color: lightcoral;
+        }
+        div{
+            color: cornflowerblue !important;
+        } */
+        
+        
+        /* (行内，id选择器个数，类选择器，标签选择器) */
+        /* 例一 */
+        /* （0，0，1，0） */
+        /* .father p{
+            color: darksalmon;
+        } */
+        /* （0，0，2，0） */
+        /* .father .son{
+            color: lightseagreen;
+        } */
+        /* （0，1，1，0） */
+        /* .father #one{
+            color: darkseagreen;
+        } */
+        /* （0，0，0，2） */
+        /* div p{
+            color: indianred;
+        } */
+        /* （0，1，0，1） */
+        /* div #one{
+            color: orchid;
+        } */
+        /* 因此，优先级排序为.father #one>div #one>.father .son>.father p>div p */
+        
+        /* 例二 */
+        /* !important 最高；继承: 最低 */
+		/* (0, 2, 0, 0) */
+		/* #father #son {
+			color: orchid; 
+		}  */
+		/* (0, 1, 1, 1) */
+		/* #father p.c2 {
+			color: palegreen;
+		}  */
+		/* (0, 0, 2, 2) */
+		/* div.c1 p.c2 {
+			color: paleturquoise;
+		} */
+		/* 继承, 最低 */
+		/* #father { 
+			color: sandybrown;
+		}  */
+		/* 继承, 最低 */
+		/* div#father.c1 {
+			color: yellow ;
+		}  */
+        /* 所以优先级为#father #son>#father p.c2>div.c1 p.c2。文本显示orchid色号 */
+
+        /* 例三 */
+	  	/* div div {
+			color: skyblue;
+		} 
+		div {
+			color: seagreen;
+		} */
+
+        /* 例四 */
+        /* div div div div div div div div div div div div {  
+			color: seagreen;
+		}
+		
+		.one { 
+			color: gold;
+		} */
+
+        /* 例五 */
+		/* (0,0,0,12) */
+		/* div div div div div div div div div div div div {  
+			color: seagreen;
+		} */
+		/* (0,0,1,0) */
+		/* .one { 
+			color: mediumturquoise;
+		} */
+
+        /* 盒子模型 */
+        /* div{
+            width:200px;
+            height:200px;
+            background-color:pink; */
+            /* 全边框/上边框-实线 下边框-实线 左边框-点线 右边框-虚线 */
+            /* border: tomato solid 30px; */
+            /* border-top: thistle solid 10px;
+            border-bottom: gold solid 10px;
+            border-left: springgreen dotted 10px;
+            border-right: lightskyblue dashed 10px; */
+            /* 内边距 */
+            /* padding: 10px; */
+            /* 外边距 */
+            /* margin: 30px;
+        } */
+
+        /* 导航案例 */
+        .box{
+            height: 30px;
+            border-top: 3px solid#ff8500;
+            border-bottom: 1px solid#edeef0;
+        }
+        .box a{
+            width: 100px;
+            height: 30px;
+            display: inline-block;
+            text-align: center;
+            line-height: 30px;
+            font-size: 18px;
+            color: #4c4c4c;
+            text-decoration: none;
+        }
+        .box>a:hover{
+            background-color: #edeef0;
+            color: #ff8500;
+
+        }
+        .center{
+            width: 600px;
+            height: 300px;
+            background-color: lightskyblue;
+            margin: 0 auto;
+        }
+        .one{
+            width: 100px;
+            height: 100px;
+            background-color: mediumseagreen;
+            margin: 30px;
+        }
+        .two{
+            width: 100px;
+            height: 100px;
+            background-color: mediumseagreen;
+            margin: 10px;
+        }
+        .three{
+            width: 40px;
+            height: 40px;
+            background-color: mediumslateblue;
+            margin: 20px;
+        }
+
+        span{
+            background-color: mediumturquoise;
+            margin: 100px;
+            line-height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <!-- <div class="box" id="box" style="color: sandybrown;">测试优先级</div> -->
+    
+    <!-- <div class="father">
+        <p class="son" id="one" style="font-weight: 700; font-size: 30px;">一个标签</p>
+    </div> -->
+    
+    <!-- <div id="father" class="c1">
+		<p id="son" class="c2">
+			这行文本是什么颜色的
+		</p>
+	</div> -->
+    
+    <!-- <div>
+		<div>
+			<div>
+				这行文本是什么颜色？
+			</div>
+		</div>
+	</div> -->
+
+    <!-- <div>
+		<div>
+			<div>
+				<div>
+					<div>
+						<div>
+							<div>
+								<div>
+									<div>
+										<div>
+											<div>
+												<div class="one">这行文字是什么颜色</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div> -->
+    
+    <!-- <div>盒子模型1</div>
+    <div>盒子模型2</div> -->
+
+    <!-- 导航案例 -->
+    <div class="box">
+        <a href="#">新浪导航</a>
+        <a href="#">新浪导航</a>
+        <a href="#">新浪导航</a>
+        <a href="#">新浪导航</a>
+    </div>
+
+    <div class="center">版心居中</div>
+    
+    <!-- 外边距的折叠现象 -->
+    <!-- ①合并 -->
+    <hr><div class="one"></div><div class="two"></div>
+    <!-- 塌陷 -->
+    <hr><div class="two">
+        <div class="three"></div>
+    </div>
+
+    <!-- 行内元素 内外边距margin/padding的top、bottom不生效 -->
+    <hr><span>span行内标签</span>
+</body>
+</html>
